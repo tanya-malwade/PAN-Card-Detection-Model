@@ -77,5 +77,3 @@ python detect.py
 ```
 
 The model will detect PAN card fields and display bounding boxes on the image.
-
----
