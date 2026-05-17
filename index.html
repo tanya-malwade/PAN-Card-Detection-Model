@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AI Document Detector</title>
+<style>
+
+body{
+background:#0f172a;
+color:white;
+font-family:Arial;
+text-align:center;
+}
+
+.container{
+width:80%;
+margin:auto;
+}
+
+.images{
+display:flex;
+justify-content:center;
+gap:50px;
+margin-top:30px;
+}
+
+img{
+width:350px;
+border:3px solid #22c55e;
+border-radius:10px;
+}
+
+button{
+padding:10px 20px;
+background:#22c55e;
+border:none;
+color:white;
+cursor:pointer;
+}
+
+.status{
+margin-top:20px;
+font-size:22px;
+font-weight:bold;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>AI PAN Card Detection System</h1>
+
+<form action="/detect" method="POST" enctype="multipart/form-data">
+
+<input type="file" name="image" required>
+<button type="submit">Detect</button>
+
+</form>
+
+<div class="status">
+{{status}}
+</div>
+
+<div class="images">
+
+{% if uploaded %}
+<div>
+<h3>Uploaded Image</h3>
+<img src="{{uploaded}}">
+</div>
+{% endif %}
+
+{% if detected %}
+<div>
+<h3>Detected Image</h3>
+<img src="{{detected}}">
+</div>
+{% endif %}
+
+</div>
+
+</div>
+
+</body>
+</html>
